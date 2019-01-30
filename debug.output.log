@@ -1,0 +1,42 @@
+docker@docker-VirtualBox:~/clientgrantsprovider-master$ python app.py
+hello to py
+before def_create_credentials_fether()
+2019-01-30 22:23:52,089 botocore.hooks [DEBUG] Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2019-01-30 22:23:52,100 botocore.hooks [DEBUG] Changing event name from before-call.apigateway to before-call.api-gateway
+2019-01-30 22:23:52,101 botocore.hooks [DEBUG] Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2019-01-30 22:23:52,105 botocore.hooks [DEBUG] Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2019-01-30 22:23:52,106 botocore.hooks [DEBUG] Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2019-01-30 22:23:52,107 botocore.hooks [DEBUG] Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2019-01-30 22:23:52,108 botocore.hooks [DEBUG] Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2019-01-30 22:23:52,112 botocore.hooks [DEBUG] Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2019-01-30 22:23:52,113 botocore.hooks [DEBUG] Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2019-01-30 22:23:52,113 botocore.hooks [DEBUG] Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2019-01-30 22:23:52,113 botocore.hooks [DEBUG] Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+('after def__init', '504324a5-c601-45e9-813d-59462fa4102b')
+('self.idp_ep', 'http://localhost:8080/auth/realms/minio/protocol/openid-connect/certs')
+('self.sts_ep', 'http://192.168.56.102:9000')
+('bc_session:', <botocore.session.Session object at 0x7fbcf1d60f10>)
+('boto3_session:', Session(region_name='us-east-1'))
+2019-01-30 22:23:52,136 botocore.loaders [DEBUG] Loading JSON file: /home/docker/.local/lib/python2.7/site-packages/boto3/data/s3/2006-03-01/resources-1.json
+2019-01-30 22:23:52,154 botocore.credentials [DEBUG] Looking for credentials via: assume-role-client-grants
+('headers:', {'content-type': 'application/x-www-form-urlencoded', 'authorization': u'Basic bWluaW86NTA0MzI0YTUtYzYwMS00NWU5LTgxM2QtNTk0NjJmYTQxMDJi'})
+('Response', <urllib3.response.HTTPResponse object at 0x7fbcf1d2d990>)
+Traceback (most recent call last):
+  File "app.py", line 43, in <module>
+    s3 = boto3_session.resource('s3',endpoint_url='http://192.168.56.102:9000')
+  File "/home/docker/.local/lib/python2.7/site-packages/boto3/session.py", line 389, in resource
+    aws_session_token=aws_session_token, config=config)
+  File "/home/docker/.local/lib/python2.7/site-packages/boto3/session.py", line 263, in client
+    aws_session_token=aws_session_token, config=config)
+  File "/home/docker/.local/lib/python2.7/site-packages/botocore/session.py", line 826, in create_client
+    credentials = self.get_credentials()
+  File "/home/docker/.local/lib/python2.7/site-packages/botocore/session.py", line 425, in get_credentials
+    'credential_provider').load_credentials()
+  File "/home/docker/.local/lib/python2.7/site-packages/botocore/credentials.py", line 1688, in load_credentials
+    creds = provider.load()
+  File "/home/docker/clientgrantsprovider-master/client_grants/__init__.py", line 67, in load
+    metadata=fetcher(),
+  File "/home/docker/clientgrantsprovider-master/client_grants/__init__.py", line 96, in fetch_credentials
+    error_msg=message % response.status,
+botocore.exceptions.CredentialRetrievalError: Error when retrieving credentials from assume-role-client-grants: Credential refresh failed, response: 405
+
